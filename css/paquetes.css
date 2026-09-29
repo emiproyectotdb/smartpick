@@ -1,0 +1,258 @@
+.paquetes-contenido {
+    padding: 38px;
+    max-width: 1050px;
+}
+
+.encabezado-pagina {
+    margin-bottom: 25px;
+}
+
+.etiqueta-seccion {
+    color: #5aadb1;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.encabezado-pagina h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #102f4f;
+    font-size: 34px;
+    letter-spacing: 1px;
+    margin: 4px 0;
+}
+
+.encabezado-pagina p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+}
+
+.formulario-paquete {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloque-formulario {
+    background: white;
+    border-radius: 12px;
+    padding: 27px;
+}
+
+.titulo-bloque {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #eee;
+}
+
+.numero-paso {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #205b9d;
+    color: white;
+
+    border-radius: 8px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 23px;
+}
+
+.titulo-bloque span {
+    color: #5aadb1;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.titulo-bloque h3 {
+    color: #102f4f;
+    margin: 2px 0 0;
+    font-size: 17px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    color: #102f4f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+
+.campo input,
+.campo select {
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 7px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #5aadb1;
+}
+
+.campo small {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.resumen-ubicacion {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    background: #f1f7fb;
+
+    border-left: 4px solid #205b9d;
+    border-radius: 7px;
+}
+
+.resumen-ubicacion > i {
+    color: #205b9d;
+    font-size: 22px;
+}
+
+.resumen-ubicacion div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.resumen-ubicacion span {
+    color: #777;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.resumen-ubicacion strong {
+    color: #102f4f;
+    font-size: 13px;
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    padding: 20px 0 35px;
+}
+
+.btn-cancelar,
+.btn-guardar {
+    padding: 13px 21px;
+
+    border-radius: 7px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.btn-cancelar {
+    background: white;
+    border: 1px solid #ccc;
+    color: #555;
+}
+
+.btn-guardar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border: none;
+
+    background: #205b9d;
+    color: white;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-guardar:hover {
+    background: #102f4f;
+}
+
+.mensaje-exito,
+.mensaje-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 18px;
+    margin-bottom: 20px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mensaje-exito {
+    background: #e8f7ee;
+    color: #247746;
+}
+
+.mensaje-error {
+    background: #fdeaea;
+    color: #a63232;
+}
+
+@media (max-width: 768px) {
+
+    .paquetes-contenido {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acciones-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancelar,
+    .btn-guardar {
+        justify-content: center;
+        text-align: center;
+    }
+}

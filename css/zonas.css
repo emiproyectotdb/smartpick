@@ -1,0 +1,957 @@
+/* ========================================
+   MAPA DEL DEPÓSITO
+======================================== */
+
+.mapa-contenido {
+    padding: 34px 38px 55px;
+}
+
+.mapa-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.mapa-etiqueta {
+    display: block;
+    margin-bottom: 4px;
+    color: #5aadb1;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.mapa-header h1 {
+    margin: 0;
+    color: #102f4f;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.mapa-header p {
+    margin: 4px 0 0;
+    color: #7b878e;
+    font-size: 9px;
+}
+
+.deposito-activo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    background: white;
+    border: 1px solid #e1e5e8;
+    border-radius: 20px;
+    color: #51616b;
+    font-size: 7px;
+    font-weight: 700;
+}
+
+.deposito-activo span {
+    width: 7px;
+    height: 7px;
+    background: #3aaa70;
+    border-radius: 50%;
+}
+
+
+/* ========================================
+   GUÍA DE PICKING
+======================================== */
+
+.guia-picking {
+    margin-bottom: 16px;
+    padding: 14px 17px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    background: #102f4f;
+    border-radius: 9px;
+
+    color: white;
+}
+
+.guia-picking-icono {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #5aadb1;
+    border-radius: 8px;
+
+    font-size: 18px;
+}
+
+.guia-picking-destino {
+    min-width: 190px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.guia-picking-destino span,
+.guia-picking-ruta > span {
+    color: #82c7ca;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.guia-picking-destino strong {
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.guia-picking-destino small {
+    margin-top: 2px;
+    color: #ced8dd;
+    font-size: 8px;
+}
+
+.guia-picking-ruta {
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.guia-picking-ruta div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 8px;
+}
+
+.guia-picking-ruta div b {
+    font-weight: 600;
+}
+
+.guia-picking-ruta i {
+    color: #5aadb1;
+    font-size: 10px;
+}
+
+
+/* ========================================
+   COMPATIBILIDAD CON AVISO ANTERIOR
+======================================== */
+
+.destino-picking {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 16px;
+    padding: 13px 16px;
+
+    background: #102f4f;
+    border-radius: 9px;
+
+    color: white;
+}
+
+.destino-picking-icono {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #5aadb1;
+    border-radius: 8px;
+
+    font-size: 17px;
+}
+
+.destino-picking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.destino-picking-info span {
+    color: #82c7ca;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.destino-picking-info strong {
+    font-size: 12px;
+}
+
+.destino-picking-info small {
+    color: #ced8dd;
+    font-size: 8px;
+}
+
+.destino-picking-indicacion {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 7px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   PLANO DEL DEPÓSITO
+======================================== */
+
+.plano-deposito {
+    position: relative;
+
+    min-height: 690px;
+
+    padding:
+        25px
+        25px
+        30px
+        105px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(150px, 1fr))
+        165px;
+
+    grid-template-rows:
+        200px
+        75px
+        200px
+        110px;
+
+    gap: 14px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, .38),
+            rgba(255, 255, 255, .38)
+        ),
+        #dce1e4;
+
+    border: 8px solid #b8c0c5;
+    border-radius: 12px;
+
+    box-shadow:
+        inset 0 0 0 2px #89959d;
+}
+
+
+/* Cuadrícula del piso */
+
+.plano-deposito::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .18;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #ffffff 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            #ffffff 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+}
+
+
+/* ========================================
+   RECEPCIÓN
+======================================== */
+
+.area-recepcion {
+    position: absolute;
+
+    top: 25px;
+    bottom: 25px;
+    left: 18px;
+
+    width: 62px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+
+    background: #102f4f;
+
+    border-right: 5px solid #e6bd3c;
+
+    color: white;
+
+    z-index: 3;
+}
+
+.area-recepcion > i {
+    margin-bottom: 14px;
+
+    color: #5aadb1;
+
+    font-size: 20px;
+}
+
+.area-recepcion > span {
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.area-recepcion small {
+    display: none;
+}
+
+.flecha-recepcion {
+    margin-top: 30px;
+
+    font-size: 21px;
+}
+
+
+/* Marca de inicio */
+
+.marca-inicio {
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 5px 7px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    background: #5aadb1;
+
+    border: 2px solid white;
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 6px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 2px 7px
+        rgba(16, 47, 79, .25);
+}
+
+.marca-inicio i {
+    font-size: 9px;
+}
+
+
+/* ========================================
+   ZONAS
+======================================== */
+
+.zona-plano {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid rgba(32, 91, 157, .28);
+    border-radius: 9px;
+
+    box-shadow:
+        0 3px 8px
+        rgba(16, 47, 79, .08);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+
+/* Fila superior */
+
+.zona-a {
+    grid-column: 1;
+    grid-row: 1;
+
+    background: #cfe2fa;
+}
+
+.zona-b {
+    grid-column: 2;
+    grid-row: 1;
+
+    background: #ccece9;
+}
+
+.zona-c {
+    grid-column: 3;
+    grid-row: 1;
+
+    background: #d6e8f2;
+}
+
+
+/* Fila inferior */
+
+.zona-d {
+    grid-column: 1;
+    grid-row: 3;
+
+    background: #e5daf4;
+}
+
+.zona-e {
+    grid-column: 2;
+    grid-row: 3;
+
+    background: #f9dfc8;
+}
+
+.zona-f {
+    grid-column: 3;
+    grid-row: 3;
+
+    background: #d1e3f8;
+}
+
+
+/* Lateral */
+
+.zona-g {
+    grid-column: 4;
+    grid-row: 2 / 4;
+
+    background: #e6eded;
+}
+
+
+/* ========================================
+   INFORMACIÓN DE CADA ZONA
+======================================== */
+
+.zona-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 7px;
+}
+
+.zona-titulo span {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 22px;
+
+    color: #102f4f;
+}
+
+.zona-titulo b {
+    padding: 4px 7px;
+
+    background: #102f4f;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 6px;
+    letter-spacing: .7px;
+}
+
+.zona-plano > strong {
+    color: #566771;
+
+    font-size: 7px;
+    letter-spacing: .6px;
+}
+
+.zona-plano > small {
+    margin-top: auto;
+
+    align-self: flex-start;
+
+    padding: 5px 8px;
+
+    background: rgba(255, 255, 255, .82);
+
+    border-radius: 5px;
+
+    color: #102f4f;
+
+    font-size: 7px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   ESTANTERÍAS
+======================================== */
+
+.estanterias {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 8px;
+
+    margin: 10px 0;
+}
+
+.estanterias span {
+    position: relative;
+
+    width: 25%;
+    height: 80px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #65747d 0,
+            #65747d 7px,
+            #b98d55 8px,
+            #d8b57e 20px,
+            #65747d 21px,
+            #65747d 25px
+        );
+
+    border: 3px solid #52636d;
+    border-radius: 3px;
+
+    box-shadow:
+        2px 3px 0
+        rgba(16, 47, 79, .16);
+}
+
+.estanterias-g {
+    flex-direction: column;
+}
+
+.estanterias-g span {
+    width: 75%;
+    height: 75px;
+}
+
+
+/* ========================================
+   PASILLO PRINCIPAL
+======================================== */
+
+.pasillo-principal {
+    position: relative;
+
+    grid-column: 1 / 4;
+    grid-row: 2;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 8px;
+
+    border-radius: 8px;
+
+    transition:
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.linea-pasillo {
+    flex: 1;
+
+    border-top:
+        2px dashed white;
+
+    transition:
+        border-color .25s ease;
+}
+
+.pasillo-principal div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #718087;
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .7px;
+
+    transition:
+        color .25s ease;
+}
+
+
+/* Pasillo cuando hay un destino */
+
+.pasillo-principal.pasillo-activo {
+    background:
+        rgba(32, 91, 157, .08);
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(32, 91, 157, .10);
+}
+
+.pasillo-principal.pasillo-activo .linea-pasillo {
+    border-color: #205b9d;
+}
+
+.pasillo-principal.pasillo-activo div {
+    color: #205b9d;
+}
+
+
+/* ========================================
+   ZONA DESTINO
+======================================== */
+
+.zona-objetivo {
+    z-index: 5;
+
+    border: 4px solid #102f4f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 5px rgba(90, 173, 177, .22),
+        0 9px 25px rgba(16, 47, 79, .25);
+
+    animation:
+        destinoPulse
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* Pin visual dentro del destino */
+
+.zona-objetivo::after {
+    content: "DESTINO";
+
+    position: absolute;
+
+    right: 10px;
+    top: 10px;
+
+    padding: 4px 7px;
+
+    background: #102f4f;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: .6px;
+}
+
+
+/*
+   Si tu HTML ya muestra DESTINO mediante
+   .zona-titulo b, ocultamos el duplicado CSS.
+*/
+
+.zona-objetivo .zona-titulo b {
+    display: none;
+}
+
+
+@keyframes destinoPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 3px rgba(90, 173, 177, .16),
+            0 8px 22px rgba(16, 47, 79, .20);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 8px rgba(90, 173, 177, .08),
+            0 10px 28px rgba(16, 47, 79, .30);
+    }
+}
+
+
+/* ========================================
+   ÁREA DE MANIOBRAS
+======================================== */
+
+.area-maniobras {
+    grid-column: 1 / 4;
+    grid-row: 4;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 2px dashed #adb7bd;
+    border-radius: 8px;
+
+    color: #718087;
+}
+
+.area-maniobras > i {
+    font-size: 22px;
+
+    color: #dfa64c;
+}
+
+.area-maniobras div {
+    display: flex;
+    flex-direction: column;
+}
+
+.area-maniobras strong {
+    font-size: 7px;
+}
+
+.area-maniobras span {
+    font-size: 7px;
+}
+
+
+/* ========================================
+   DESPACHO
+======================================== */
+
+.area-despacho {
+    grid-column: 4;
+    grid-row: 4;
+
+    z-index: 2;
+
+    padding: 13px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #102f4f;
+
+    border-radius: 8px;
+
+    color: white;
+}
+
+.area-despacho > i {
+    color: #5aadb1;
+
+    font-size: 21px;
+}
+
+.area-despacho > span {
+    margin-top: 4px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 16px;
+}
+
+.area-despacho small {
+    color: #b7c6ce;
+
+    font-size: 6px;
+}
+
+.flecha-despacho {
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   LEYENDA
+======================================== */
+
+.leyenda-mapa {
+    margin-top: 13px;
+
+    padding: 13px 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px 18px;
+
+    background: white;
+
+    border: 1px solid #e0e4e7;
+    border-radius: 8px;
+}
+
+.leyenda-mapa > div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #68777f;
+
+    font-size: 7px;
+}
+
+.leyenda-color {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 3px;
+}
+
+.color-a {
+    background: #9ec8f6;
+}
+
+.color-b {
+    background: #8fd3cc;
+}
+
+.color-c {
+    background: #a9cfdf;
+}
+
+.color-d {
+    background: #c4aae7;
+}
+
+.color-e {
+    background: #efb77f;
+}
+
+.color-f {
+    background: #9ec8f6;
+}
+
+.color-g {
+    background: #b9c9c9;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .plano-deposito {
+        overflow-x: auto;
+
+        grid-template-columns:
+            repeat(3, 190px)
+            150px;
+    }
+
+    .guia-picking {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .guia-picking-ruta {
+        width: 100%;
+
+        margin-left: 56px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .mapa-contenido {
+        padding:
+            25px
+            15px
+            45px;
+    }
+
+    .mapa-header {
+        flex-direction: column;
+    }
+
+    .deposito-activo {
+        align-self: flex-start;
+    }
+
+    .guia-picking {
+        padding: 12px;
+    }
+
+    .guia-picking-ruta {
+        margin-left: 0;
+    }
+
+    .guia-picking-ruta div {
+        flex-wrap: wrap;
+    }
+
+    .destino-picking {
+        align-items: flex-start;
+    }
+
+    .destino-picking-indicacion {
+        display: none;
+    }
+
+    .plano-deposito {
+        min-width: 850px;
+    }
+
+    .leyenda-mapa {
+        min-width: 0;
+    }
+}

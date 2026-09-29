@@ -1,0 +1,303 @@
+.clientes-contenido {
+    padding: 38px;
+}
+
+.clientes-cabecera {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.etiqueta-seccion {
+    display: block;
+    color: #5aadb1;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+.clientes-cabecera h2,
+.encabezado-formulario h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #102f4f;
+    margin: 0;
+}
+
+.clientes-cabecera p,
+.encabezado-formulario p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.btn-nuevo-cliente {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #205b9d;
+    color: white;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-nuevo-cliente:hover {
+    background: #102f4f;
+}
+
+.clientes-filtros {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.buscador {
+    position: relative;
+    max-width: 480px;
+}
+
+.buscador i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.buscador input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 12px 15px 12px 42px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.buscador input:focus {
+    border-color: #5aadb1;
+}
+
+.panel-clientes {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+.tabla-clientes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-clientes th {
+    text-align: left;
+    padding: 16px 18px;
+    background: #102f4f;
+    color: white;
+    font-size: 12px;
+    letter-spacing: .5px;
+}
+
+.tabla-clientes td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.tabla-clientes tbody tr:hover {
+    background: #f7f9fb;
+}
+
+.tabla-vacia {
+    text-align: center;
+    padding: 45px !important;
+    color: #777;
+}
+
+.tabla-vacia i {
+    font-size: 30px;
+}
+
+.mensaje-exito,
+.mensaje-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mensaje-exito {
+    background: #e8f7ee;
+    color: #247746;
+}
+
+.mensaje-error {
+    background: #fdeaea;
+    color: #a63232;
+}
+
+
+/* NUEVO CLIENTE */
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #205b9d;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.formulario-cliente {
+    max-width: 900px;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.encabezado-formulario {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.icono-formulario {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    background: #e9f2fa;
+    color: #205b9d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.encabezado-formulario span {
+    color: #5aadb1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #102f4f;
+}
+
+.campo input {
+    padding: 13px 14px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #5aadb1;
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid #eee;
+}
+
+.btn-cancelar,
+.btn-guardar {
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    text-decoration: none;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.btn-guardar {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 0;
+    background: #205b9d;
+    color: white;
+}
+
+.btn-guardar:hover {
+    background: #102f4f;
+}
+
+@media (max-width: 768px) {
+
+    .clientes-contenido {
+        padding: 20px;
+    }
+
+    .clientes-cabecera {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .acciones-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancelar,
+    .btn-guardar {
+        justify-content: center;
+        text-align: center;
+    }
+}

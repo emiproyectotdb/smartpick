@@ -1,0 +1,507 @@
+/* =========================================
+   CONTENIDO PEDIDOS
+========================================= */
+
+.pedidos-contenido {
+    padding: 35px 38px 45px;
+}
+
+
+/* =========================================
+   CABECERA
+========================================= */
+
+.pedidos-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.etiqueta-seccion {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #5aadb1;
+}
+
+
+.pedidos-cabecera h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 36px;
+    font-weight: 400;
+
+    color: #102f4f;
+}
+
+
+.pedidos-cabecera p {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #6c757d;
+}
+
+
+/* =========================================
+   BOTÓN NUEVO PEDIDO
+========================================= */
+
+.btn-nuevo-pedido {
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 7px;
+
+    background: #205b9d;
+
+    color: white;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: .4px;
+
+    transition: .25s ease;
+}
+
+
+.btn-nuevo-pedido:hover {
+    background: #5aadb1;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(32, 91, 157, .18);
+}
+
+
+/* =========================================
+   FILTROS
+========================================= */
+
+.pedidos-filtros {
+    margin-bottom: 20px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #e4e7eb;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.buscador {
+    position: relative;
+
+    flex: 1;
+}
+
+
+.buscador i {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #90969d;
+
+    font-size: 15px;
+}
+
+
+.buscador input {
+    width: 100%;
+    height: 43px;
+
+    padding:
+        0
+        15px
+        0
+        42px;
+
+    border:
+        1px solid #dfe3e7;
+
+    border-radius: 7px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+
+.buscador input:focus {
+    border-color: #5aadb1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(90, 173, 177, .12);
+}
+
+
+.pedidos-filtros select {
+    width: 200px;
+    height: 43px;
+
+    padding: 0 12px;
+
+    border:
+        1px solid #dfe3e7;
+
+    border-radius: 7px;
+
+    background: white;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 11px;
+
+    outline: none;
+}
+
+
+/* =========================================
+   PANEL
+========================================= */
+
+.panel-pedidos {
+    background: white;
+
+    border:
+        1px solid #e4e7eb;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TABLA
+========================================= */
+
+.tabla-pedidos {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.tabla-pedidos thead {
+    background: #f8f9fb;
+}
+
+
+.tabla-pedidos th {
+    padding: 15px 18px;
+
+    text-align: left;
+
+    font-size: 10px;
+
+    color: #6c757d;
+
+    border-bottom:
+        1px solid #e4e7eb;
+}
+
+
+.tabla-pedidos td {
+    padding: 17px 18px;
+
+    font-size: 12px;
+
+    border-bottom:
+        1px solid #eeeeee;
+}
+
+
+.tabla-pedidos tbody tr {
+    transition: .2s ease;
+}
+
+
+.tabla-pedidos tbody tr:hover {
+    background: #fafcfd;
+}
+
+
+.tabla-vacia {
+    height: 150px;
+
+    text-align: center;
+
+    color: #9ca1a7;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .pedidos-contenido {
+        padding:
+            25px
+            20px;
+    }
+
+
+    .pedidos-cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .btn-nuevo-pedido {
+        width: 100%;
+    }
+
+
+    .pedidos-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .pedidos-filtros select {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   ESTADOS
+========================================= */
+
+.estado {
+
+    display: inline-block;
+
+    min-width: 85px;
+
+    padding:
+        7px
+        11px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .3px;
+
+}
+
+
+/* PENDIENTE */
+
+.estado-pendiente {
+
+    background: #fff3cd;
+
+    color: #856404;
+
+}
+
+
+/* EN PROCESO */
+
+.estado-proceso {
+
+    background: #dcecff;
+
+    color: #205b9d;
+
+}
+
+
+/* COMPLETADO */
+
+.estado-completado {
+
+    background: #d9f3e3;
+
+    color: #18733d;
+
+}
+
+
+/* ENTREGADO */
+
+.estado-entregado {
+
+    background: #e3dcf3;
+
+    color: #65459a;
+
+}
+
+
+
+/* =========================================
+   ACCIONES TABLA
+========================================= */
+
+.acciones-tabla {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.btn-accion {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    transition: .2s ease;
+
+}
+
+
+.btn-ver {
+
+    background: #eaf2fb;
+
+    color: #205b9d;
+
+}
+
+
+.btn-ver:hover {
+
+    background: #205b9d;
+
+    color: white;
+
+}
+
+
+.btn-editar {
+
+    background: #e7f4f4;
+
+    color: #408f93;
+
+}
+
+
+.btn-editar:hover {
+
+    background: #5aadb1;
+
+    color: white;
+
+}
+
+
+
+/* =========================================
+   TABLA VACÍA
+========================================= */
+
+.tabla-vacia {
+
+    text-align: center;
+
+    padding: 60px 20px !important;
+
+    color: #999;
+
+}
+
+
+.tabla-vacia i {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+
+    color: #b8bdc2;
+
+}
+
+
+.tabla-vacia p {
+
+    font-size: 12px;
+
+}
+
+.estado-retirado {
+    background: #d9f3e3;
+    color: #18733d;
+}
+
+
+.estado-almacenado {
+    background: #eaf2fb;
+    color: #205b9d;
+}
+
+
+.estado-ingresado {
+    background: #f1f1f1;
+    color: #656565;
+}
+
+.estado-validar {
+    background: #fff1cc;
+    color: #9a6a00;
+}

@@ -1,0 +1,874 @@
+.picking-contenido {
+    max-width: 1150px;
+    padding: 35px 38px 60px;
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado-picking {
+    margin-bottom: 22px;
+}
+
+
+.encabezado-picking span {
+    font-size: 8px;
+    font-weight: 700;
+
+    color: #5aadb1;
+
+    letter-spacing: 1px;
+}
+
+
+.encabezado-picking h2 {
+    margin: 4px 0 2px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+
+    color: #102f4f;
+}
+
+
+.encabezado-picking p {
+    margin: 0;
+
+    font-size: 10px;
+
+    color: #848d94;
+}
+
+
+/* =========================================
+   GRID PEDIDOS
+========================================= */
+
+.grid-pedidos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================
+   TARJETA PEDIDO
+========================================= */
+
+.pedido-picking {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        55px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid #e3e7ea;
+
+    border-radius: 11px;
+
+    transition: .2s ease;
+}
+
+
+.pedido-picking:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, .06);
+}
+
+
+.pedido-icono {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eaf2f9;
+
+    color: #205b9d;
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   INFORMACIÓN PEDIDO
+========================================= */
+
+.pedido-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.pedido-info span {
+    font-size: 7px;
+    font-weight: 700;
+
+    color: #8e969c;
+}
+
+
+.pedido-info h3 {
+    margin: 2px 0;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #102f4f;
+}
+
+
+.pedido-info p {
+    margin: 0;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    color: #46545f;
+}
+
+
+.pedido-info small {
+    margin-top: 4px;
+
+    font-size: 8px;
+
+    color: #92999f;
+}
+
+
+/* =========================================
+   ESTADO
+========================================= */
+
+.pedido-estado {
+    align-self: flex-start;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #dcecff;
+
+    color: #205b9d;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BOTÓN PICKING
+========================================= */
+
+.btn-iniciar {
+    grid-column: 1 / -1;
+
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 7px;
+
+    background: #205b9d;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+
+.btn-iniciar:hover {
+    background: #5aadb1;
+}
+
+
+/* =========================================
+   SIN PEDIDOS
+========================================= */
+
+.sin-picking {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: 1px solid #e4e7eb;
+    border-radius: 12px;
+
+    color: #8d969d;
+}
+
+
+.sin-picking i {
+    font-size: 38px;
+
+    color: #5aadb1;
+}
+
+
+.sin-picking h3 {
+    margin: 12px 0 3px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 23px;
+
+    color: #102f4f;
+}
+
+
+.sin-picking p {
+    margin: 0;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   VOLVER
+========================================= */
+
+.volver {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+    color: #205b9d;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CABECERA HOJA
+========================================= */
+
+.cabecera-hoja {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    padding: 20px;
+
+    background: #102f4f;
+
+    border-radius: 10px;
+
+    color: white;
+}
+
+
+.cabecera-hoja > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.cabecera-hoja span {
+    font-size: 7px;
+    font-weight: 700;
+
+    opacity: .65;
+}
+
+
+.cabecera-hoja strong {
+    font-size: 11px;
+}
+
+
+.badge-preparando {
+    width: fit-content;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #5aadb1;
+}
+
+
+/* =========================================
+   RUTA
+========================================= */
+
+.ruta-titulo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 28px 0 15px;
+}
+
+
+.ruta-titulo > i {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eaf2f9;
+
+    color: #205b9d;
+
+    font-size: 19px;
+}
+
+
+.ruta-titulo h2 {
+    margin: 0;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 23px;
+    font-weight: 400;
+
+    color: #102f4f;
+}
+
+
+.ruta-titulo p {
+    margin: 2px 0 0;
+
+    font-size: 9px;
+
+    color: #8c949a;
+}
+
+
+/* =========================================
+   LISTA PICKING
+========================================= */
+
+.lista-picking {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.item-picking {
+    display: grid;
+
+    grid-template-columns:
+        40px
+        minmax(200px, 1fr)
+        minmax(300px, 1.3fr)
+        80px;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 17px;
+
+    background: white;
+
+    border: 1px solid #e2e6e9;
+
+    border-radius: 9px;
+}
+
+
+/* =========================================
+   NÚMERO
+========================================= */
+
+.numero-picking {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #205b9d;
+
+    color: white;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   PRODUCTO
+========================================= */
+
+.producto-picking {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.producto-picking span,
+.ubicacion-picking span,
+.cantidad-picking span {
+    font-size: 7px;
+    font-weight: 700;
+
+    color: #91999f;
+}
+
+
+.producto-picking strong {
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #273a47;
+}
+
+
+.producto-picking small {
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: #8b9399;
+}
+
+
+/* =========================================
+   UBICACIÓN
+========================================= */
+
+.ubicacion-picking {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr;
+
+    gap: 10px;
+}
+
+
+.ubicacion-picking > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 9px;
+
+    border-radius: 6px;
+
+    background: #f5f7f8;
+}
+
+
+.ubicacion-picking strong {
+    font-size: 9px;
+
+    color: #334852;
+}
+
+
+/* =========================================
+   CANTIDAD
+========================================= */
+
+.cantidad-picking {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.cantidad-picking strong {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 24px;
+
+    color: #205b9d;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .grid-pedidos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .item-picking {
+        grid-template-columns:
+            40px
+            1fr;
+    }
+
+
+    .ubicacion-picking {
+        grid-column: 1 / -1;
+    }
+
+
+    .cantidad-picking {
+        grid-column: 1 / -1;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .picking-contenido {
+        padding: 25px 18px;
+    }
+
+
+    .cabecera-hoja {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ubicacion-picking {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   ACCIÓN PICKING
+========================================= */
+
+.accion-picking {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #edf0f2;
+}
+
+
+.btn-confirmar-picking {
+    min-width: 155px;
+
+    height: 36px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    background: #205b9d;
+
+    color: white;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+.btn-confirmar-picking:hover {
+    background: #5aadb1;
+}
+
+
+.btn-confirmar-picking:disabled {
+    opacity: .6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   PRODUCTO CONFIRMADO
+========================================= */
+
+.item-confirmado {
+    background: #f5faf7;
+
+    border-color: #cce6d7;
+
+    opacity: .85;
+}
+
+
+.item-confirmado .numero-picking {
+    background: #29945a;
+}
+
+
+.producto-confirmado {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #dff2e7;
+
+    color: #24824f;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+.producto-confirmado i {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PICKING TERMINADO
+========================================= */
+
+.picking-completado {
+    margin-top: 12px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 9px;
+
+    background: #e2f4e9;
+
+    color: #247c4d;
+}
+
+
+.picking-completado > i {
+    font-size: 25px;
+}
+
+
+.picking-completado div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.picking-completado strong {
+    font-size: 10px;
+}
+
+
+.picking-completado span {
+    font-size: 8px;
+}
+
+.btn-volver-pedidos {
+    margin-left: auto;
+
+    padding: 9px 14px;
+
+    border-radius: 6px;
+
+    background: #247c4d;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.btn-volver-pedidos:hover {
+    opacity: .85;
+}
+
+/* ========================================
+   VER UBICACIÓN EN MAPA
+======================================== */
+
+.btn-ver-mapa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 7px 10px;
+
+    background: #eef6fb;
+
+    border: 1px solid #bdd8e9;
+    border-radius: 6px;
+
+    color: #205b9d;
+
+    font-size: 7px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.btn-ver-mapa:hover {
+    background: #205b9d;
+
+    border-color: #205b9d;
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+.btn-ver-mapa i {
+    font-size: 10px;
+}
+
+/* ========================================
+   BOTÓN VER EN MAPA
+======================================== */
+
+.btn-ver-mapa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    background: #eef6fb;
+    border: 1px solid #b9d5e5;
+    border-radius: 6px;
+
+    color: #205b9d;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7px;
+    font-weight: 700;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.btn-ver-mapa i {
+    font-size: 10px;
+}
+
+.btn-ver-mapa:hover {
+    background: #205b9d;
+    border-color: #205b9d;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.btn-ver-mapa:active {
+    transform: translateY(0);
+}
