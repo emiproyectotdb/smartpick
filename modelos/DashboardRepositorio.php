@@ -18,7 +18,7 @@ class DashboardRepositorio
     {
         $sql = "
             SELECT COALESCE(SUM(Stock_actual), 0) AS total
-            FROM producto
+            FROM Producto
         ";
 
         $stmt = $this->conexion->prepare($sql);
@@ -38,7 +38,7 @@ class DashboardRepositorio
     {
         $sql = "
             SELECT COUNT(*) AS total
-            FROM pedido
+            FROM Pedido
             WHERE LOWER(Estado) = 'pendiente'
         ";
 
@@ -59,7 +59,7 @@ class DashboardRepositorio
     {
         $sql = "
             SELECT COUNT(*) AS total
-            FROM operario
+            FROM Operario
             WHERE LOWER(Rol) = 'operario'
         ";
 
@@ -105,7 +105,7 @@ class DashboardRepositorio
                 ID_pedido,
                 Fecha_ingresado,
                 Estado
-            FROM pedido
+            FROM Pedido
             ORDER BY ID_pedido DESC
             LIMIT 5
         ";

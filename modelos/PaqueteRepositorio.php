@@ -32,7 +32,7 @@ class PaqueteRepositorio
 
             $sqlCliente = "
                 SELECT CI_cliente
-                FROM cliente
+                FROM Cliente
                 WHERE CI_cliente = :ci
                 LIMIT 1
                 FOR UPDATE
@@ -59,7 +59,7 @@ class PaqueteRepositorio
 
             $sqlZona = "
                 SELECT ID_zona
-                FROM zona
+                FROM Zona
                 WHERE ID_zona = :zona
                 LIMIT 1
                 FOR UPDATE
@@ -85,7 +85,7 @@ class PaqueteRepositorio
             // ==========================================
 
             $sqlProducto = "
-                INSERT INTO producto
+                INSERT INTO Producto
                 (
                     Tipo,
                     Descripcion,
@@ -120,7 +120,7 @@ class PaqueteRepositorio
             // ==========================================
 
             $sqlPedido = "
-                INSERT INTO pedido
+                INSERT INTO Pedido
                 (
                     Fecha_entregado,
                     Fecha_ingresado,
@@ -148,7 +148,7 @@ class PaqueteRepositorio
             // ==========================================
 
             $sqlRecibe = "
-                INSERT INTO recibe_entrega
+                INSERT INTO Recibe_entrega
                 (
                     ID_pedido,
                     CI_cliente
@@ -174,7 +174,7 @@ class PaqueteRepositorio
             // ==========================================
 
             $sqlContiene = "
-                INSERT INTO contiene
+                INSERT INTO Contiene
                 (
                     ID_pedido,
                     ID_producto,
@@ -202,7 +202,7 @@ class PaqueteRepositorio
             // ==========================================
 
             $sqlUbicacion = "
-                INSERT INTO esta
+                INSERT INTO Esta
                 (
                     ID_producto,
                     ID_zona

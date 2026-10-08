@@ -22,7 +22,7 @@ class ProductoRepositorio
                 Stock_minimo,
                 Categoria
 
-            FROM producto
+            FROM Producto
 
             ORDER BY Descripcion ASC
         ";
@@ -46,7 +46,7 @@ class ProductoRepositorio
                 Stock_minimo,
                 Categoria
 
-            FROM producto
+            FROM Producto
 
             WHERE UPPER(Tipo) = 'ALMACEN'
 
@@ -82,7 +82,7 @@ class ProductoRepositorio
                 Stock_minimo,
                 Categoria
 
-            FROM producto
+            FROM Producto
 
             WHERE ID_producto = :id
 
@@ -120,12 +120,12 @@ public function obtenerProductosAlmacen()
             z.Nombre AS Zona,
             z.Nivel,
             z.Estante
-        FROM producto p
+        FROM Producto p
 
-        LEFT JOIN esta e
+        LEFT JOIN Esta e
             ON e.ID_producto = p.ID_producto
 
-        LEFT JOIN zona z
+        LEFT JOIN Zona z
             ON z.ID_zona = e.ID_zona
 
         WHERE UPPER(p.Tipo) = 'ALMACEN'
@@ -167,7 +167,7 @@ $sqlExiste = "
     SELECT
         ID_producto,
         Descripcion
-    FROM producto
+    FROM Producto
     WHERE UPPER(Tipo) = 'ALMACEN'
       AND LOWER(TRIM(Descripcion)) =
           LOWER(TRIM(:descripcion))
@@ -198,7 +198,7 @@ if ($productoExistente) {
         // Verificar que exista la zona
         $sqlZona = "
             SELECT ID_zona
-            FROM zona
+            FROM Zona
             WHERE ID_zona = :zona
             LIMIT 1
         ";
@@ -219,7 +219,7 @@ if ($productoExistente) {
 
         // Crear producto
         $sqlProducto = "
-            INSERT INTO producto
+            INSERT INTO Producto
             (
                 Tipo,
                 Descripcion,
@@ -253,7 +253,7 @@ if ($productoExistente) {
 
         // Asignar ubicación
         $sqlEsta = "
-            INSERT INTO esta
+            INSERT INTO Esta
             (
                 ID_producto,
                 ID_zona
@@ -307,12 +307,12 @@ public function obtenerProductoAlmacenPorId($idProducto)
             z.Nivel,
             z.Estante
 
-        FROM producto p
+        FROM Producto p
 
-        LEFT JOIN esta e
+        LEFT JOIN Esta e
             ON e.ID_producto = p.ID_producto
 
-        LEFT JOIN zona z
+        LEFT JOIN Zona z
             ON z.ID_zona = e.ID_zona
 
         WHERE p.ID_producto = :id
@@ -359,7 +359,7 @@ public function modificarProductoAlmacen(
         // Verificar producto
         $sqlProducto = "
             SELECT ID_producto
-            FROM producto
+            FROM Producto
             WHERE ID_producto = :id
               AND UPPER(Tipo) = 'ALMACEN'
             LIMIT 1
@@ -388,7 +388,7 @@ public function modificarProductoAlmacen(
                 ID_producto,
                 Descripcion
 
-            FROM producto
+            FROM Producto
 
             WHERE UPPER(Tipo) = 'ALMACEN'
 
@@ -425,7 +425,7 @@ public function modificarProductoAlmacen(
         // Verificar zona
         $sqlZona = "
             SELECT ID_zona
-            FROM zona
+            FROM Zona
             WHERE ID_zona = :zona
             LIMIT 1
         ";
@@ -448,7 +448,7 @@ public function modificarProductoAlmacen(
 
         // Actualizar datos
         $sqlActualizar = "
-            UPDATE producto
+            UPDATE Producto
 
             SET
                 Descripcion = :descripcion,
@@ -481,7 +481,7 @@ public function modificarProductoAlmacen(
 
         // Actualizar ubicación
         $sqlEsta = "
-            INSERT INTO esta
+            INSERT INTO Esta
                 (ID_producto, ID_zona)
 
             VALUES

@@ -20,9 +20,9 @@ class OperarioRepositorio
                 p.Mail,
                 p.Telefono
 
-            FROM operario o
+            FROM Operario o
 
-            INNER JOIN persona p
+            INNER JOIN Persona p
                 ON p.CI = o.CI_operario
 
             WHERE LOWER(o.Rol) IN ('operario', 'administrador')
@@ -46,9 +46,9 @@ class OperarioRepositorio
             o.Rol,
             p.Nombre_completo
 
-        FROM operario o
+        FROM Operario o
 
-        INNER JOIN persona p
+        INNER JOIN Persona p
             ON p.CI = o.CI_operario
 
         WHERE o.CI_operario = :ci

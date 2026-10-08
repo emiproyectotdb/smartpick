@@ -19,9 +19,9 @@ class ClienteRepositorio
                 p.Telefono,
                 p.Mail,
                 p.Direccion
-            FROM cliente c
+            FROM Cliente c
 
-            INNER JOIN persona p
+            INNER JOIN Persona p
                 ON p.CI = c.CI_cliente
 
             ORDER BY p.Nombre_completo ASC
@@ -44,9 +44,9 @@ class ClienteRepositorio
                 p.Telefono,
                 p.Mail,
                 p.Direccion
-            FROM cliente c
+            FROM Cliente c
 
-            INNER JOIN persona p
+            INNER JOIN Persona p
                 ON p.CI = c.CI_cliente
 
             WHERE
@@ -77,9 +77,9 @@ class ClienteRepositorio
                 p.Telefono,
                 p.Mail,
                 p.Direccion
-            FROM cliente c
+            FROM Cliente c
 
-            INNER JOIN persona p
+            INNER JOIN Persona p
                 ON p.CI = c.CI_cliente
 
             WHERE c.CI_cliente = :ci
@@ -114,7 +114,7 @@ public function crear(
         // Verificar que la CI no exista
         $sqlExiste = "
             SELECT CI
-            FROM persona
+            FROM Persona
             WHERE CI = :ci
             LIMIT 1
         ";
@@ -139,7 +139,7 @@ public function crear(
 
             $sqlMail = "
                 SELECT CI
-                FROM persona
+                FROM Persona
                 WHERE Mail = :mail
                 LIMIT 1
             ";
@@ -162,7 +162,7 @@ public function crear(
 
         // Crear Persona
         $sqlPersona = "
-            INSERT INTO persona
+            INSERT INTO Persona
             (
                 CI,
                 Nombre_completo,
@@ -198,7 +198,7 @@ public function crear(
 
         // Crear Cliente
         $sqlCliente = "
-            INSERT INTO cliente
+            INSERT INTO Cliente
             (
                 CI_cliente
             )

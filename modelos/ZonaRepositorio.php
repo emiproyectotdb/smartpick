@@ -27,9 +27,9 @@ class ZonaRepositorio
                 z.ID_deposito,
                 d.Nombre AS Deposito
 
-            FROM zona z
+            FROM Zona z
 
-            INNER JOIN deposito d
+            INNER JOIN Deposito d
                 ON d.ID_deposito = z.ID_deposito
 
             ORDER BY
@@ -63,9 +63,9 @@ class ZonaRepositorio
                 z.ID_deposito,
                 d.Nombre AS Deposito
 
-            FROM zona z
+            FROM Zona z
 
-            INNER JOIN deposito d
+            INNER JOIN Deposito d
                 ON d.ID_deposito = z.ID_deposito
 
             WHERE z.ID_zona = :id

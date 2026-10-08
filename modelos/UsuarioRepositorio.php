@@ -21,8 +21,8 @@ class UsuarioRepositorio
                 p.Mail,
                 p.Contrasena,
                 o.Rol
-            FROM persona p
-            INNER JOIN operario o
+            FROM Persona p
+            INNER JOIN Operario o
                 ON p.CI = o.CI_operario
             WHERE p.CI = :ci
             LIMIT 1

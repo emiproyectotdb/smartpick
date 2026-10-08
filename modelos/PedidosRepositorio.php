@@ -24,7 +24,7 @@ class PedidoRepositorio
                 Fecha_entregado,
                 Estado
 
-            FROM pedido
+            FROM Pedido
 
             ORDER BY
                 COALESCE(Fecha_entregado, Fecha_ingresado) DESC,
@@ -52,7 +52,7 @@ class PedidoRepositorio
                 Fecha_entregado,
                 Estado
 
-            FROM pedido
+            FROM Pedido
 
             WHERE ID_pedido = :id
 
@@ -91,15 +91,15 @@ class PedidoRepositorio
 
                 c.Cantidad
 
-            FROM pedido pe
+            FROM Pedido pe
 
-            INNER JOIN recibe_entrega re
+            INNER JOIN Recibe_entrega re
                 ON re.ID_pedido = pe.ID_pedido
 
-            INNER JOIN contiene c
+            INNER JOIN Contiene c
                 ON c.ID_pedido = pe.ID_pedido
 
-            INNER JOIN producto pr
+            INNER JOIN Producto pr
                 ON pr.ID_producto = c.ID_producto
 
             WHERE re.CI_cliente = :ci
@@ -162,7 +162,7 @@ class PedidoRepositorio
                         Tipo,
                         Stock_actual
 
-                    FROM producto
+                    FROM Producto
 
                     WHERE ID_producto = :id
 
@@ -224,7 +224,7 @@ class PedidoRepositorio
             // ------------------------------------------
 
             $sqlPedido = "
-                INSERT INTO pedido
+                INSERT INTO Pedido
                 (
                     Fecha_entregado,
                     Fecha_ingresado,
@@ -255,7 +255,7 @@ class PedidoRepositorio
             // ------------------------------------------
 
             $sqlCliente = "
-                INSERT INTO recibe_entrega
+                INSERT INTO Recibe_entrega
                 (
                     ID_pedido,
                     CI_cliente
@@ -288,7 +288,7 @@ class PedidoRepositorio
             // ------------------------------------------
 
             $sqlProducto = "
-                INSERT INTO contiene
+                INSERT INTO Contiene
                 (
                     ID_pedido,
                     ID_producto,
@@ -362,18 +362,18 @@ class PedidoRepositorio
 
             operario.Nombre_completo AS Operario
 
-        FROM pedido pe
+        FROM Pedido pe
 
-        INNER JOIN recibe_entrega re
+        INNER JOIN Recibe_entrega re
             ON re.ID_pedido = pe.ID_pedido
 
-        INNER JOIN persona cliente
+        INNER JOIN Persona cliente
             ON cliente.CI = re.CI_cliente
 
-        LEFT JOIN atiende a
+        LEFT JOIN Atiende a
             ON a.ID_pedido = pe.ID_pedido
 
-        LEFT JOIN persona operario
+        LEFT JOIN Persona operario
             ON operario.CI = a.CI_operario
 
         WHERE pe.ID_pedido = :id
@@ -407,9 +407,9 @@ public function obtenerProductosPedido($idPedido)
             p.Categoria,
             p.Stock_actual
 
-        FROM contiene c
+        FROM Contiene c
 
-        INNER JOIN producto p
+        INNER JOIN Producto p
             ON p.ID_producto = c.ID_producto
 
         WHERE c.ID_pedido = :id
@@ -441,7 +441,7 @@ public function asignarOperario($idPedido, $ciOperario)
         // Comprobar que el pedido exista
         $sqlPedido = "
             SELECT Estado
-            FROM pedido
+            FROM Pedido
             WHERE ID_pedido = :id
             FOR UPDATE
         ";
@@ -468,7 +468,7 @@ public function asignarOperario($idPedido, $ciOperario)
         // Ver si ya tiene un operario asignado
         $sqlExiste = "
             SELECT ID_pedido
-            FROM atiende
+            FROM Atiende
             WHERE ID_pedido = :id
         ";
 
@@ -485,7 +485,7 @@ public function asignarOperario($idPedido, $ciOperario)
             // Si ya existe, reasignamos
 
             $sqlAsignar = "
-                UPDATE atiende
+                UPDATE Atiende
 
                 SET CI_operario = :operario
 
@@ -497,7 +497,7 @@ public function asignarOperario($idPedido, $ciOperario)
             // Primera asignación
 
             $sqlAsignar = "
-                INSERT INTO atiende
+                INSERT INTO Atiende
                 (
                     ID_pedido,
                     CI_operario
@@ -529,7 +529,7 @@ public function asignarOperario($idPedido, $ciOperario)
 
         // El pedido pasa a preparación
         $sqlEstado = "
-            UPDATE pedido
+            UPDATE Pedido
 
             SET Estado = 'PREPARANDO'
 
@@ -584,15 +584,15 @@ public function retirarPaquetesCliente($ciCliente, $idsPedidos)
                     pe.ID_pedido,
                     pe.Estado
 
-                FROM pedido pe
+                FROM Pedido pe
 
-                INNER JOIN recibe_entrega re
+                INNER JOIN Recibe_entrega re
                     ON re.ID_pedido = pe.ID_pedido
 
-                INNER JOIN contiene c
+                INNER JOIN Contiene c
                     ON c.ID_pedido = pe.ID_pedido
 
-                INNER JOIN producto pr
+                INNER JOIN Producto pr
                     ON pr.ID_producto = c.ID_producto
 
                 WHERE pe.ID_pedido = :id_pedido
@@ -638,7 +638,7 @@ public function retirarPaquetesCliente($ciCliente, $idsPedidos)
             // ==========================================
 
             $sqlActualizar = "
-                UPDATE pedido
+                UPDATE Pedido
 
                 SET
                     Estado = 'PENDIENTE_RETIRO',
